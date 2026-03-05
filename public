@@ -1,1 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Tính x + y</title>
+</head>
 
+<body>
+
+<h2>Cộng hai số</h2>
+
+x = <input id="x"><br><br>
+y = <input id="y"><br><br>
+
+<button onclick="gui()">Tính</button>
+
+<br><br>
+
+z = <input id="z" readonly>
+
+<script>
+
+function gui(){
+
+let x = document.getElementById("x").value;
+let y = document.getElementById("y").value;
+
+fetch("/tinh",{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body: JSON.stringify({x:x,y:y})
+})
+
+.then(res => res.json())
+.then(data => {
+
+document.getElementById("z").value = data.ketqua;
+
+});
+
+}
+
+</script>
+
+</body>
+</html>
