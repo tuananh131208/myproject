@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Tính x + y</title>
+
+<style>
+body{
+font-family:Arial;
+padding:40px;
+}
+
+input{
+padding:5px;
+margin:5px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>Cộng hai số</h2>
+
+x = <input id="x"><br>
+y = <input id="y"><br>
+
+<button onclick="tinh()">Tính</button>
+
+<br><br>
+
+z = <input id="z" readonly>
+
+<script>
+
+function tinh(){
+
+let x = Number(document.getElementById("x").value);
+let y = Number(document.getElementById("y").value);
+
+document.getElementById("z").value = x + y;
+
+}
+
+</script>
+
+</body>
+</html>
